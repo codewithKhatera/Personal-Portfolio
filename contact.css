@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: EB Garamond;
+}
+
+.video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.navbar {
+    background-color: rgba(128, 0, 128, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: Playwrite Australia SA Guides;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #be0beb;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        background: rgba(128, 0, 128, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+    }
+
+    #menu-toggle:checked+.menu-icon+.nav-links {
+        max-height: 300px;
+        padding: 1rem;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin: 3rem 0 2rem;
+    color: #d8b4f8;
+    text-shadow: 2px 2px 4px #000;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: auto;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #ffccff;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: 2px solid #d8b4f8;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    background: #d8b4f8;
+    color: #1e1e2f;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #ffb6c1;
+}
+
+footer {
+    background-color: rgba(128, 0, 128, 0.7);
+    padding: 2rem 1rem 1rem;
+    color: #ccc;
+    text-align: center;
+    margin-top: auto;
+  }
+  
+  .social-icons {
+    margin: 1rem 0;
+  }
+  
+  .social-icons a {
+    margin: 0 10px;
+    color: #d8b4f8;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #ffb6c1;
+  }
+  
+  .footer-line {
+    height: 1px;
+    background-color: #888;
+    margin: 1rem auto;
+    width: 80%;
+  }
+  
+  .credit {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    animation: slideUp 2s ease forwards;
+  }
+  
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
